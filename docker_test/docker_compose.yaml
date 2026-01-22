@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+    web_app:
+        image: my-docker-web-app:latest
+        container_name: test_web_container
+        ports:
+          - "8080:80"
+          volumes:
+          - ./test.html:/usr/share/nginx/html/index.html
