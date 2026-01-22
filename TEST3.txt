@@ -1,0 +1,8 @@
+git stash -m "junior-task"
+git checkout main
+git add fix_file
+git commit -m "fix_file"
+git push
+git checkout feature/junior-task
+git stash pop
+git commit --amend -m "rename commit"
