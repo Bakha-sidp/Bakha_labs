@@ -1,4 +1,5 @@
 #!/bin/bash
+# Инструкция
 if [ $# -ne 2 ]; then
     echo "Использование: $0 /path/to/logs N"
     echo "Пример где:"
@@ -10,11 +11,13 @@ fi
 LOG_DIR="$1"
 DAYS="$2"
 
+# Поиск директории
 if [ ! -d "$LOG_DIR" ]; then
     echo "Ошибка: директория '$LOG_DIR' не существует"
     exit 1
 fi
 
+# Поиск файлов .log старше N дней
 FILES=$(find "$LOG_DIR" -type f -name "*.log" -mtime +"$DAYS")
 
 if [ -z "$FILES" ]; then
